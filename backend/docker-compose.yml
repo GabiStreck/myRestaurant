@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  express_myrestaurant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+    depends_on:
+      - myrestaurant_db
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@myrestaurant_db:5432/myRestaurantDB?schema=public
+      - PORT=8080
+
+    networks:
+      - express_network_myrestaurant
+
+  myrestaurant_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=myRestaurantDB
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_myrestaurant:/var/lib/postgresql/data
+    networks:
+      - express_network_myrestaurant
+
+volumes:
+  postgres_data_myrestaurant:
+  prisma:
+
+
+networks:
+  express_network_myrestaurant:
