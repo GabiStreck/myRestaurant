@@ -1,6 +1,8 @@
 import { View, Text } from 'react-native'
+import { FC } from 'react'
+import { ProductParams } from '../types/screen'
 
-export default function ProductScreen() {
+const ProductScreen: FC<ProductParams> = ({ productId }) => {
     return (
         <View >
             <Text >
@@ -9,3 +11,4 @@ export default function ProductScreen() {
         </View>
     )
 }
+export default ProductScreen

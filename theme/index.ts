@@ -1,8 +1,14 @@
 export const theme = {
     colors: {
-        bgColor: opacity => `rgba(112, 66, 20, ${opacity})`,
-        bgLight: '#d4a574',
-        bgDark: '#8c5319',
-        text: '#3C2A21'
+        bgColor: (opacity: number) => `rgba(112, 66, 20, ${opacity})`,
+        bgLight: '#1260cc',
+        bgDark: '#fefefe',
+        text: '#92ddea'
     }
 }
+
+// #00214A
+// #0D3F7C
+// #04BBEC
+// #FF82F4
+// #EA25B5

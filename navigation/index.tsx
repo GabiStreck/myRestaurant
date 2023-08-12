@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import routes from '../constants/routes';
 import ProductScreen from '../screens/ProductScreen';
 import ReservationScreen from '../screens/ReservationScreen';
 import HomeScreen from '../screens/HomeScreen';
@@ -14,29 +15,29 @@ export default function AppNavigation() {
             <Stack.Navigator>
                 <Stack.Group>
                     <Stack.Screen
-                        name="home"
+                        name={routes.SCREEN_HOME}
                         options={{ headerShown: false }}
                         component={HomeScreen}
                     />
                     <Stack.Screen
-                        name="product"
+                        name={routes.SCREEN_PRODUCT_DETAIL}
                         options={{ headerShown: false }}
                         component={ProductScreen}
                     />
                 </Stack.Group>
                 <Stack.Group screenOptions={{ presentation: 'modal' }} >
                     <Stack.Screen
-                        name="favorite"
+                        name={routes.SCREEN_FAVORITES}
                         component={FavoriteScreen}
                         options={{ headerShown: false }}
                     />
                     <Stack.Screen
-                        name="reservation"
+                        name={routes.SCREEN_RESERVATION}
                         component={ReservationScreen}
                         options={{ headerShown: false }}
                     />
                     <Stack.Screen
-                        name="cart"
+                        name={routes.SCREEN_CART}
                         component={CartScreen}
                         options={{ headerShown: false }}
                     />
