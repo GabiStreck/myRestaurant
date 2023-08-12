@@ -1,7 +1,3 @@
-// types/types.ts
-
-// Define los tipos de datos para cada modelo
-
 export interface User {
     id: number;
     email: string;
@@ -9,14 +5,66 @@ export interface User {
     imageUrl?: string;
     createdAt: Date;
     updatedAt: Date;
+    Reservation: Reservation[];
+    Order: Order[];
 }
 
 export interface Table {
     id: number;
     number: number;
     capacity: number;
+    indoor: boolean;
     createdAt: Date;
     updatedAt: Date;
+    Reservation: Reservation[];
+    Order: Order[];
+}
+
+export interface Product {
+    id: number;
+    name: string;
+    imageUrl?: string;
+    price: number;
+    description: string;
+    rating: number;
+    createdAt: Date;
+    updatedAt: Date;
+    category: Category;
+    categoryId: number;
+    Menu?: Menu;
+    menuId?: number;
+    Order?: Order;
+    orderId?: number;
+    Dish?: Dish;
+    Drink?: Drink;
+}
+
+export interface Dish {
+    id: number;
+    cookingTime: number;
+    allergens: string[];
+    ingredients: string[];
+    createdAt: Date;
+    updatedAt: Date;
+    product: Product;
+    productId: number;
+}
+
+export interface Drink {
+    id: number;
+    volume: string;
+    createdAt: Date;
+    updatedAt: Date;
+    product: Product;
+    productId: number;
+}
+
+export interface Category {
+    id: number;
+    name: string;
+    createdAt: Date;
+    updatedAt: Date;
+    Product: Product[];
 }
 
 export interface Menu {
@@ -24,36 +72,28 @@ export interface Menu {
     name: string;
     createdAt: Date;
     updatedAt: Date;
-}
-
-export interface Dish {
-    id: number;
-    name: string;
-    imageUrl?: string;
-    price: number;
-    menu: Menu;
-    createdAt: Date;
-    updatedAt: Date;
-}
-
-export interface Drink {
-    id: number;
-    name: string;
-    imageUrl?: string;
-    price: number;
-    menu: Menu;
-    createdAt: Date;
-    updatedAt: Date;
+    products: Product[];
 }
 
 export interface Reservation {
     id: number;
     date: Date;
-    mealType: string;
-    table: Table;
-    user: User;
-    dishes: Dish[];
-    drinks: Drink[];
     createdAt: Date;
     updatedAt: Date;
+    table: Table;
+    tableId: number;
+    user: User;
+    userId: number;
+}
+
+export interface Order {
+    id: number;
+    isPaid: boolean;
+    createdAt: Date;
+    updatedAt: Date;
+    table?: Table;
+    tableId?: number;
+    user: User;
+    userId: number;
+    products: Product[];
 }

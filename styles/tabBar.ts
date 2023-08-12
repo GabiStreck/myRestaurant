@@ -4,8 +4,8 @@ import { theme } from "../theme"
 const ios = Platform.OS == 'ios';
 
 export const tabBarStyles = {
-    marginBottom: 20,
-    height: 75,
+    marginBottom: 15,
+    height: 65,
     display: "flex",
     flexDirection: 'row',
     alignItems: 'center',
@@ -17,5 +17,6 @@ export const tabBarStyles = {
     position: "absolute",
     right: 0,
     left: 0,
-    bottom: 0
+    bottom: 0,
+    zIndex: 100
 } as ViewStyle
