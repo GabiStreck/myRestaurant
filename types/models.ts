@@ -11,6 +11,24 @@ export type Product = {
     updatedAt: Date;
 }
 
+export type Dish = {
+    id: number;
+    cookingTime: number;
+    allergens: string[];
+    ingredients: string[];
+    createdAt: Date;
+    updatedAt: Date;
+    product: Product;
+}
+
+export interface Drink {
+    id: number;
+    volume: string;
+    createdAt: Date;
+    updatedAt: Date;
+    product: Product;
+}
+
 export type Category = {
     id: number;
     name: string;

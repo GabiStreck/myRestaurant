@@ -1,11 +1,10 @@
-import { Category, Menu, Product } from "../types/models";
-
+import { Category, Dish, Drink, Menu, Product } from "../types/models";
 
 export const products: Product[] = [
     {
         id: 1,
         name: "Pizza Margherita",
-        imageUrl: "https://picsum.photos/150/150",
+        imageUrl: "https://picsum.photos/254",
         price: 12.99,
         description: "Delicious classic pizza with tomatoes, mozzarella, and basil.",
         rating: 4.5,
@@ -17,7 +16,7 @@ export const products: Product[] = [
     {
         id: 2,
         name: "Spaghetti Bolognese",
-        imageUrl: "https://picsum.photos/150/150",
+        imageUrl: "https://picsum.photos/254",
         price: 9.99,
         description: "Traditional Italian pasta dish with meaty Bolognese sauce.",
         rating: 4.2,
@@ -29,7 +28,7 @@ export const products: Product[] = [
     {
         id: 3,
         name: "Caesar Salad",
-        imageUrl: "https://picsum.photos/150/150",
+        imageUrl: "https://picsum.photos/254",
         price: 7.99,
         description: "Classic Caesar salad with romaine lettuce, croutons, and Caesar dressing.",
         rating: 4.8,
@@ -41,7 +40,7 @@ export const products: Product[] = [
     {
         id: 4,
         name: "Margarita Cocktail",
-        imageUrl: "https://picsum.photos/150/150",
+        imageUrl: "https://picsum.photos/254",
         price: 6.99,
         description: "Refreshing cocktail with tequila, triple sec, and lime juice.",
         rating: 4.6,
@@ -53,7 +52,7 @@ export const products: Product[] = [
     {
         id: 5,
         name: "Orange Juice",
-        imageUrl: "https://picsum.photos/150/150",
+        imageUrl: "https://picsum.photos/254",
         price: 2.99,
         description: "Freshly squeezed orange juice, packed with vitamin C.",
         rating: 4.9,
@@ -65,7 +64,7 @@ export const products: Product[] = [
     {
         id: 6,
         name: "Tiramisu",
-        imageUrl: "https://picsum.photos/150/150",
+        imageUrl: "https://picsum.photos/254",
         price: 5.99,
         description: "Classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese.",
         rating: 4.7,
@@ -76,6 +75,128 @@ export const products: Product[] = [
     },
 ];
 
+export const drinks: Drink[] = [
+    {
+        id: 1,
+        volume: '500ml',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        product: {
+            id: 4,
+            name: "Margarita Cocktail",
+            imageUrl: "https://picsum.photos/254",
+            price: 6.99,
+            description: "Refreshing cocktail with tequila, triple sec, and lime juice.",
+            rating: 4.6,
+            categoryId: 4,
+            menu: [3],
+            createdAt: new Date(),
+            updatedAt: new Date(),
+        }
+    },
+    {
+        id: 2,
+        volume: '250ml',
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        product: {
+            id: 5,
+            name: "Orange Juice",
+            imageUrl: "https://picsum.photos/254",
+            price: 2.99,
+            description: "Freshly squeezed orange juice, packed with vitamin C.",
+            rating: 4.9,
+            categoryId: 5,
+            menu: [1, 2, 3],
+            createdAt: new Date(),
+            updatedAt: new Date(),
+        }
+    },
+
+];
+
+export const dishes: Dish[] = [
+    {
+        id: 1,
+        cookingTime: 900,
+        allergens: [],
+        ingredients: [],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        product: {
+            id: 1,
+            name: "Pizza Margherita",
+            imageUrl: "https://picsum.photos/254",
+            price: 12.99,
+            description: "Delicious classic pizza with tomatoes, mozzarella, and basil.",
+            rating: 4.5,
+            categoryId: 1,
+            menu: [2],
+            createdAt: new Date(),
+            updatedAt: new Date(),
+        }
+    },
+    {
+        id: 2,
+        cookingTime: 900,
+        allergens: ['mani', 'almendra', 'marisco'],
+        ingredients: ['fideos', 'tomate', 'carne', 'oregano', 'cebolla', 'albaca'],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        product: {
+            id: 2,
+            name: "Spaghetti Bolognese",
+            imageUrl: "https://picsum.photos/254",
+            price: 9.99,
+            description: "Traditional Italian pasta dish with meaty Bolognese sauce.",
+            rating: 4.2,
+            categoryId: 2,
+            menu: [1, 3],
+            createdAt: new Date(),
+            updatedAt: new Date(),
+        }
+    },
+    {
+        id: 3,
+        cookingTime: 900,
+        allergens: [],
+        ingredients: [],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        product: {
+            id: 3,
+            name: "Caesar Salad",
+            imageUrl: "https://picsum.photos/254",
+            price: 7.99,
+            description: "Classic Caesar salad with romaine lettuce, croutons, and Caesar dressing.",
+            rating: 4.8,
+            categoryId: 3,
+            menu: [2, 3],
+            createdAt: new Date(),
+            updatedAt: new Date(),
+        }
+    },
+    {
+        id: 4,
+        cookingTime: 900,
+        allergens: [],
+        ingredients: [],
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        product: {
+            id: 6,
+            name: "Tiramisu",
+            imageUrl: "https://picsum.photos/254",
+            price: 5.99,
+            description: "Classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese.",
+            rating: 4.7,
+            categoryId: 6,
+            menu: [1],
+            createdAt: new Date(),
+            updatedAt: new Date(),
+        }
+    },
+];
 
 
 
@@ -120,7 +241,7 @@ const Menus: Menu[] = [
             {
                 id: 6,
                 name: "Tiramisu",
-                imageUrl: "https://picsum.photos/150/150",
+                imageUrl: "https://picsum.photos/254",
                 price: 5.99,
                 description: "Classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese.",
                 rating: 4.7,
@@ -132,7 +253,7 @@ const Menus: Menu[] = [
             {
                 id: 5,
                 name: "Orange Juice",
-                imageUrl: "https://picsum.photos/150/150",
+                imageUrl: "https://picsum.photos/254",
                 price: 2.99,
                 description: "Freshly squeezed orange juice, packed with vitamin C.",
                 rating: 4.9,
@@ -176,7 +297,7 @@ const Menus: Menu[] = [
             {
                 id: 5,
                 name: "Orange Juice",
-                imageUrl: "https://picsum.photos/150/150",
+                imageUrl: "https://picsum.photos/200",
                 price: 2.99,
                 description: "Freshly squeezed orange juice, packed with vitamin C.",
                 rating: 4.9,
@@ -244,7 +365,7 @@ const Menus: Menu[] = [
             {
                 id: 5,
                 name: "Orange Juice",
-                imageUrl: "https://picsum.photos/150/150",
+                imageUrl: "https://picsum.photos/200",
                 price: 2.99,
                 description: "Freshly squeezed orange juice, packed with vitamin C.",
                 rating: 4.9,

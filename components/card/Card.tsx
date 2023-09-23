@@ -59,7 +59,7 @@ const Card: FC<CardProps> = ({ product }) => {
                 <View style={priceContainerStyle}>
                     <Text style={priceTextStyle}>$ {product.price}</Text>
                     <TouchableOpacity
-                        onPress={() => navigation.navigate(SCREEN_PRODUCT_DETAIL, { productId: product.id })}
+                        onPress={() => navigation.navigate(SCREEN_PRODUCT_DETAIL, { product: product })}
                         style={plusButtonStyle}
                     >
                         <PlusIcon size={25} strokeWidth={2} color={theme.colors.bgDark} />

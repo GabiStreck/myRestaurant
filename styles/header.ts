@@ -13,7 +13,7 @@ export const headerStyles = StyleSheet.create({
         position: 'absolute',
         width: '100%',
         height: 210,
-        opacity: 0.2,
+        opacity: 0.15,
     },
 });
 
