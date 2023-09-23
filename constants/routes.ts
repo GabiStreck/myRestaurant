@@ -1,8 +1,8 @@
-export const SCREEN_HOME = 'home'
-export const SCREEN_PRODUCT_DETAIL = 'product'
-export const SCREEN_FAVORITES = 'favorite'
-export const SCREEN_RESERVATION = 'reservation'
-export const SCREEN_CART = 'cart'
+export const SCREEN_HOME: string = 'home'
+export const SCREEN_PRODUCT_DETAIL: string = 'product'
+export const SCREEN_FAVORITES: string = 'favorite'
+export const SCREEN_RESERVATION: string = 'reservation'
+export const SCREEN_CART: string = 'cart'
 
 export default {
     SCREEN_HOME,

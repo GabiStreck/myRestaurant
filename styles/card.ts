@@ -5,11 +5,11 @@ const { width, height } = Dimensions.get('window');
 const ios = Platform.OS == 'ios';
 
 export const containerStyle = {
-    height: ios ? height * 0.4 : height * 0.48,
-    width: width * 0.70,
+    height: ios ? height * 0.4 : height * 0.52,
+    width: width * 0.68,
     position: 'relative',
     flexDirection: 'column',
-    paddingTop: 60
+    paddingTop: 70
 } as ViewStyle;
 
 export const imageContainerStyle = {

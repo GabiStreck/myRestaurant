@@ -8,7 +8,7 @@ import MenuOptionsList from '../components/menu/MenuOptionsList';
 import CategoryList from '../components/home/CategoryList';
 import SearchBar from '../components/home/SearchBar';
 import Header from '../components/Header';
-import { styles } from '../styles/homeScree';
+import { styles } from '../styles/homeScreen';
 
 export default function HomeScreen({ navigation }: any) {
     const [activeCategory, setActiveCategory] = useState(1);
@@ -18,7 +18,7 @@ export default function HomeScreen({ navigation }: any) {
             <Header>
                 <View style={styles.header}>
                     <Image
-                        source={{ uri: 'https://picsum.photos/30/30' }}
+                        source={{ uri: 'https://picsum.photos/40/40' }}
                         style={styles.avatar}
                     />
                     <View style={styles.headerTextContainer}>
@@ -39,7 +39,6 @@ export default function HomeScreen({ navigation }: any) {
             <ScrollView style={styles.scrollContainer}>
                 <View style={styles.menuContainer}>
                     <MenuOptionsList title='Menu' products={products} />
-                    <MenuOptionsList title='Recommends' products={products} />
                 </View>
             </ScrollView>
             <HomeTabs navigation={navigation} />
